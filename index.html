@@ -49,8 +49,18 @@
     .hero-honbun {
       font-size: 16px;
       padding: 40px;
-
+      background-color: #00c300;
+      color: white;
+      
     }
+    .fade-in {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
     </style>
 </head>
 <body>
@@ -64,10 +74,17 @@
       </a>
       </div>
       </div>
-      <div class="hero-honbun">
-        <center><h1>LINE友達登録はこちらから↓<p><img src="https://i.postimg.cc/766pfKQt/QR-019921.png" alt="LINE友達追加用QR"></p>
-        </h1><h3>それかこの</h3><a href="https://lin.ee/qXUIbA5">ここをタップ！</a><h3>をタップして友達追加できます</h3></center>
+      <div class="hero-honbun fade-in">
+        <center><h1>LINE友達登録はこちらから↓</h1><p><img src="https://i.postimg.cc/766pfKQt/QR-019921.png" alt="LINE友達追加用QR"></p>
+        <h3>それかこの<a href="https://lin.ee/qXUIbA5">ここをタップ！</a>をタップして友達追加できます</h3></center>
       </div>
+      <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const el = document.querySelector('.fade-in');
+    setTimeout(() => {
+      el.classList.add('visible');
+    }, 300);
+  });
+</script>
   </body>
-</body>
 </html>

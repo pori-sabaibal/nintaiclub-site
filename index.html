@@ -79,7 +79,15 @@
 .text-right {
   text-align: right;
 }
-
+.slide-in {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.slide-in.show {
+  opacity: 1;
+  transform: translateX(0);
+}
     </style>
 </head>
 <body>
@@ -93,10 +101,12 @@
       </a>
       </div>
       </div>
-      <div class="hero-honbun fade-scroll">
+      <div class="hero-honbun slide-in">
         <center><h1>LINE友達登録はこちらから↓</h1><p><img src="https://i.postimg.cc/766pfKQt/QR-019921.png" alt="LINE友達追加用QR"></p>
         <h3>それかこの<a href="https://lin.ee/qXUIbA5">ここをタップ！</a>をタップして友達追加できます</h3></center>
         予約などはこちらのURLから→<a href="https://docs.google.com/forms/d/e/1FAIpQLScu2VCCfT7Qx6G0uFGqmei3RNwPVM-hoi9UneBPqc2VbGcTcw/viewform"target="_blank">ここをタップ</a>
+        <h3>一緒に走りませんか？</h3>
+        <img src="https://i.postimg.cc/sxCPq7Dm/image.jpg" alt="自転車の写真">
       </div>
       <script>
       window.addEventListener('DOMContentLoaded', () => {
@@ -108,7 +118,7 @@
     }
   });
   window.addEventListener('scroll', () => {
-    document.querySelectorAll('.fade-scroll').forEach(el => {
+    document.querySelectorAll('.slide-in').forEach(el => {
       const rect = el.getBoundingClientRect();
       const isVisible = rect.top < window.innerHeight - 100; // 表示エリアに入ったら
       if (isVisible) {
